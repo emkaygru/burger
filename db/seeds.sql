@@ -1,0 +1,1 @@
+INSERT INTO burgers (burger_name) VALUES('Chicken Burger'),('Veggie Burger'),('Bacon Burger');  
