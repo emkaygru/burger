@@ -32,7 +32,9 @@ function objToSql() {
 
     }
     return array.toString();
-}
+};
+
+
 var orm = {
     selectAll: function (tableInput, cb) {
         var queryString = "SELECT * FROM " + tableInput + ";";
@@ -81,7 +83,7 @@ var orm = {
             cb(result);
         });
     },
-    delete: function (table, condition, cb) {
+    deleteOne: function (table, condition, cb) {
         var queryString = "DELETE FROM " + table;
         queryString += " WHERE ";
         queryString += condition;
