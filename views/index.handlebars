@@ -9,9 +9,9 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 text-center">
-        <form action="/burgers/create" method="POST">
-          <input type="text" class="form-control" name="burgerName" id=""> 
-          <button type="submit" class="btn btn-primary" id="text-enter-button">Submit</button>
+        <form class="create-form">
+          <input type="text" class="form-control" name="burgerName" id="burgerName"> 
+          <button type="submit" class="btn btn-primary" id="addBurger">Submit</button>
 
         </form>
         <p>Please enter the burger you want to eat and click the "Submit" button. </p>
@@ -28,9 +28,9 @@
           <pre>{{this.id}}. {{this.burger_name}}</pre>
         </div>
         <div class="col-xs-3">
-          <form action="/burgers/update?_method=PUT" method="POST" class="">
+          <form class="create-form">
             <input type="hidden" type="text" name="burger_id" value={{this.id}}><br>
-            <button type="submit" class="btn btn-default">YEET THE MEAT</button>
+            <button type="submit" class="btn btn-default" id="eatBurger">YEET THE MEAT</button>
           </form>
         </div>
         {{/unless}}
