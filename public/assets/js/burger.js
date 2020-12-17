@@ -36,7 +36,7 @@ $(function () {
     });
   });
 
-  $(".delete-burger").on("click", function (e) {
+  $(".trashburger").on("click", function (e) {
     var id = $(this).data("id");
 
     // Send the DELETE request.
