@@ -17,11 +17,9 @@ router.get("/", (req, res) => {
 });
 
 router.post("/api/burgers", (req, res) => {
-  burger.insertOne(["burger_name"], [req.body.burger_name], (result) => {
+  burger.insertOne(["burger_name"], [req.body.name], (result) => {
     // Send back the ID of the new quote
-    res.json({
-      id: result.insertId,
-    });
+    res.redirect("/");
   });
 });
 
