@@ -5,13 +5,14 @@ $(function () {
     var newBurger = $(this).data("newBurger");
 
     let devouredState = {
-      devoured: newBurger,
+      devoured: 1,
     };
     // Send the PUT request.
     $.ajax("/api/burgers/" + id, {
       type: "PUT",
+      data: devouredState,
     }).then(function () {
-      console.log("");
+      console.log("burger has been yeethed");
       // Reload the page to get the updated list
       location.reload();
     });
@@ -40,7 +41,7 @@ $(function () {
     var id = $(this).data("id");
 
     // Send the DELETE request.
-    $.ajax("/api/burgers/" + id, {
+    $.ajax("/api/burgers" + id, {
       type: "DELETE",
     }).then(function () {
       console.log("deleted burger", id);

@@ -31,8 +31,9 @@
         </li>
         <div class="col-xs-3">
           <form class="create-form">
-            <input type="hidden" type="text" name="burger_id" value={{this.id}}><br>
-            <button type="submit" class="btn btn-default" id="eatBurger">YEET THE MEAT</button>
+            {{!-- <input type="hidden" type="text" name="burger_id" value={{this.id}}><br> --}}
+            <button class="btn btn-success devourBtn" data-id="{{id}}">YEET THE MEAT</button>
+            <button class="btn btn-success trashBurger" data-id="{{id}}">DELETE THE MEAT</button>
           </form>
         </div>
         {{/unless}}
@@ -40,12 +41,19 @@
       </ul>
     </div>
 
-    <div class="col-xs-6 text-center" class="sidebar">
-      {{#each burger}}
-      {{#if devoured}}
-      <input class="form-control" type="text" placeholder="{{this.id}}. {{this.burger_name}}" readonly>
-      {{/if}}
-      {{/each}}
+    <div class="col-12 col-lg-6 text-center sidebar">
+      <h1>YEETH MEAT</h1>
+      <ul>
+        {{#each burger}}
+        {{#if devoured}}
+        <li>  
+          <button class="btn btn-success trashBurger" data-id="{{id}}">DELETE THE MEAT</button>
+        </li>
+          
+        {{/if}}
+        {{/each}}
+      </ul>
+      
     </div>
   </div>
 </div>
