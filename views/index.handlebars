@@ -11,7 +11,7 @@
     <div class="row">
       <div class="col-xs-12 text-center">
         <form class="create-form">
-          <input type="text" class="form-control" name="burgerName" id="bu"> 
+          <input type="text" class="form-control" name="name" id="bu"> 
           <button type="submit" class="btn btn-primary submit-btn" id="addBurger">Submit</button>
 
         </form>
@@ -27,7 +27,7 @@
         {{#each burger}}
         {{#unless devoured}}
         <li class="col-xs-9 text-center">
-          <pre>{{this.id}}. {{this.burger_name}}</pre>
+          {{this.id}}. {{this.burger_name}}
         </li>
         <div class="col-xs-3">
           <form class="create-form">
