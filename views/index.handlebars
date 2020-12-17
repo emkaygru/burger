@@ -1,8 +1,9 @@
-<div class="container">
+<div class="container-fluid" width="100%">
   <div class="row">
     <div class="col-xs-12 text-center">
       <img src="/assets/img/burger.png" alt="burgerImg" class="burgerImg">
       <h1>Eat Da Meat!</h1>
+      <p>Please enter the burger you want to eat and click the "Submit" button. </p>
     </div>
   </div>
 
@@ -10,23 +11,24 @@
     <div class="row">
       <div class="col-xs-12 text-center">
         <form class="create-form">
-          <input type="text" class="form-control" name="burgerName" id="burgerName"> 
+          <input type="text" class="form-control" name="burgerName" id="bu"> 
           <button type="submit" class="btn btn-primary submit-btn" id="addBurger">Submit</button>
 
         </form>
-        <p>Please enter the burger you want to eat and click the "Submit" button. </p>
+        
       </div>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-xs-6 text-center" class="sidebar">
-      <div class="row">
+    <div class="col-12 col-lg-6 text-center">
+      <h1>Yummy Meat</h1>
+      <ul class="text-left burgers-list">
         {{#each burger}}
         {{#unless devoured}}
-        <div class="col-xs-9 text-center">
+        <li class="col-xs-9 text-center">
           <pre>{{this.id}}. {{this.burger_name}}</pre>
-        </div>
+        </li>
         <div class="col-xs-3">
           <form class="create-form">
             <input type="hidden" type="text" name="burger_id" value={{this.id}}><br>
@@ -35,7 +37,7 @@
         </div>
         {{/unless}}
         {{/each}}
-      </div>
+      </ul>
     </div>
 
     <div class="col-xs-6 text-center" class="sidebar">
