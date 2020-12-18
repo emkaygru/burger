@@ -24,16 +24,19 @@
     <div class="col-12 col-lg-6 text-center">
       <h1>Yummy Meat</h1>
       <ul class="text-left burgers-list">
-        {{#each burger}}
+        <li>
+        {{#each burgers}}
         {{#unless devoured}}
+        </li>
+        
         <li class="col-xs-9 text-center">
-          {{this.id}}. {{this.burger_name}}
+          {{this.id}} - {{this.burger_name}}
         </li>
         <div class="col-xs-3">
-          <form class="create-form">
+          <form>
             {{!-- <input type="hidden" type="text" name="burger_id" value={{this.id}}><br> --}}
-            <button class="btn btn-success devourBtn" data-id="{{id}}">YEET THE MEAT</button>
-            <button class="btn btn-success trashBurger" data-id="{{id}}">DELETE THE MEAT</button>
+            <button class="devoured btn btn-success devourBtn" data-id="{{id}}">Eat it!</button>
+            
           </form>
         </div>
         {{/unless}}
@@ -44,8 +47,11 @@
     <div class="col-12 col-lg-6 text-center sidebar">
       <h1>YEETH MEAT</h1>
       <ul>
-        {{#each burger}}
+        <li>
+        {{#each burgers}}
         {{#if devoured}}
+        </li>
+        
         <li>  
           <button class="btn btn-success trashBurger" data-id="{{id}}">DELETE THE MEAT</button>
         </li>
