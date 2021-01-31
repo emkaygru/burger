@@ -4,7 +4,7 @@ var connection;
 //Connection to MYSQL database
 // and adding HEROKU connection
 if (process.env.JAWSDB_URL) {
-  connection = mysql.connect(process.env.JAWSDB_URL);
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
   connection = mysql.createConnection({
     host: "localhost",
